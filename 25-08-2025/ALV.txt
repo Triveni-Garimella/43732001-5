@@ -1,0 +1,23 @@
+show databases;
+create database sathyabama;
+use sathyabama;
+create table student(
+sid int primary key,
+sname varchar(20) not null,
+sdept varchar(20) not null,
+ssalary long not null,
+spno int unique
+);
+insert into student values(1,'apple','hr',20000,123),(2,'apple','operations',30000,240),(3,'cherry','hr',35000,345),(4,'danesh','analyst',45000,678),(5,'engun','mechanical',10000,321);
+select * from student;
+
+#using as
+select  ssalary as student_salary from student;
+
+#using like
+select sname from student where sname like "_p%";
+ 
+#using view
+create view  least_salary   as select ssalary from student where ssalary<=20000;
+select * from least_salary;
+

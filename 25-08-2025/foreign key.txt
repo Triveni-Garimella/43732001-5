@@ -1,0 +1,36 @@
+show databases;
+create database sathyabama;
+use sathyabama;
+create table college(
+cid int primary key,
+cname varchar(20) not null
+);
+insert into college values(101,'sathyabama'),(102,'VIT'),(103,'SRM');
+select * from college;
+
+create table department1(
+did int primary key,
+dname varchar(20) not null,
+cid int not null,
+foreign key(cid) references college(cid) on delete cascade on update cascade 
+);
+insert into department1 values(1,'cse',101),(2,'eee',102),(3,'ece',101),(4,'mec',103),(5,'aero',103);
+select * from department1;
+ 
+create table student1(
+sid int primary key,
+sname varchar(20) not null,
+did int not null,
+foreign key(did) references department1(did) on delete cascade on update cascade
+) ;
+insert into student1 values(10,'vimala',1),(20,'amala',3),(30,'kamala',5),(40,'samata',2),(50,'mamata',3),(60,'drm',4);
+select * from student1;
+
+#delete cascade
+set sql_safe_updates=0;
+delete from college where cid=101;
+set sql_safe_updates=1;
+
+#update casacade
+update college set cid=105 where cid=103;
+
