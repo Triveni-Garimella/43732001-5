@@ -14,7 +14,7 @@ create table products(
 pid int primary key,
 pname varchar(20) not null,
 cid int not null,
-foreign key(cid) references category(cid)  on delete cascade
+foreign key(cid) references category(cid)  on delete cascade on update cascade
 );
 insert into products values(1001,'phn',1),(1002,'charger',1),(1003,'sofa',2);
 select * from products;
