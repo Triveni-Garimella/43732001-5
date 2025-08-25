@@ -14,7 +14,10 @@ select * from ace;
 alter table ace
 modify semail varchar(20) unique;
 
+#create index
+create index idx_sname on ace(sname);
+
 #drop index
 alter table ace
-drop index ace;
+drop index idx_sname;
 
