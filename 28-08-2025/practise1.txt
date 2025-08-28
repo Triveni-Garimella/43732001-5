@@ -1,0 +1,23 @@
+show databases;
+create database sathyabama;
+use sathyabama;
+create table employees(
+eid int primary key,
+ename varchar(20) not null,
+edept varchar(10) not null,
+esalary long not null
+);
+insert into employees values(1001,'rani','hr',220000),(1002,'savitha','operations',30000),(1003,'seetha','manager',10000),(1004,'vani','hr',2500000),(1005,'bhumi','admin',100000),(1006,'dharani','manager',500000),(1007,'vanitha','operations',1000000);
+select * from employees;
+
+# Find departments with average salary > 100000
+select edept as department,avg(esalary)  from employees group by edept having avg(esalary)>100000;
+
+# Find departments where max salary is exactly 500000.
+select edept  from employees group by edept having max(esalary)=500000;
+
+#Find departments with more than 1 employee and total salary > 100000.
+select   edept as depeartment,sum(esalary),count(edept) from employees group by edept having sum(esalary)>100000 and count(edept) >1;
+
+# Find departments with avg salary between 50000 and 200000.
+select edept,avg(esalary) as average_salary from employees  group by edept having avg(esalary) between 50000 and 200000; 

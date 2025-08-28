@@ -1,0 +1,18 @@
+show databases;
+create database sathyabama;
+use sathyabama;
+create table movies(
+mid int primary key,
+mname varchar(20) not null,
+myear int  not null,
+mcollections int not null
+);
+insert into movies values(101,'RRR',2024,2000000),(102,'8 Vasantalu',2023,10000),(103,'Guru',2025,1500000),(104,'Salaar',2022,2300000),(105,'War 2',2025,3000000);
+select * from movies;
+
+#using group by
+select myear,count(mname) from movies 
+group by myear ; 
+
+#using order by
+select mname,mcollections from movies order by mname asc;

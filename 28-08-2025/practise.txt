@@ -1,0 +1,17 @@
+show databases;
+create database sathyabama;
+use sathyabama;
+create table staff4(
+sid int primary key,
+sname varchar(20) not null,
+sdept varchar(20) not null,
+ssalary long not null
+);
+insert into staff4 values(1,'vanitha','operations',800000),(2,'sunitha','Hr',700000),(3,'Veera','Manager',400000),(4,'Ramu','admin',200000),(5,'sunny','operations',200000);
+select * from staff4;
+
+# Count employees not in HR or Admin.
+select  sdept,count(sname) from staff4  where sdept not in ('hr','admin') group by sdept;
+
+# Find the highest salary in each department.
+select sdept,max(ssalary) as highest_salary from staff4   group by sdept;
