@@ -1,0 +1,74 @@
+//HashSet
+package Collections;
+
+import java.util.*;
+
+public class hashset {
+	public static void main(String[] args){
+		 HashSet<Integer> set=new HashSet<Integer>();
+		  set.add(109);
+		  set.add(102);
+		  set.add(103);
+		  set.add(100);
+		  set.add(null);
+		  set.add(100);
+		  System.out.println(set);
+		  System.out.println(set.remove(100));
+		  
+	}
+
+}
+
+
+//LinkedHashSet
+package Collections;
+
+import java.util.*;
+
+public class linkedHashmap {
+	public static void main(String[] args) {
+		LinkedHashSet<String> lhs=new LinkedHashSet<String>();
+		lhs.add("Rama");
+		lhs.add("Suma");
+		lhs.add("Juhi");
+		lhs.add(null);
+		lhs.add("Ruchi");
+		lhs.add("Rama");
+		lhs.add(null);
+		Iterator itr=lhs.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr.next());
+		}
+		System.out.println(lhs);
+		
+		
+		
+	}
+
+}
+
+//TreeSet
+package Collections;
+
+import java.util.*;
+
+public class Treset {
+public static void maina(String[] args){
+			 TreeSet<Integer> st=new TreeSet<>();
+			 st.add(100);
+			 st.add(110);
+			 st.add(200);
+			 st.add(110);
+			 st.add(null);
+			 Iterator itr=st.iterator();
+			 while(itr.hasNext()){
+				 System.out.println(itr.next());
+			 }
+			 
+			 System.out.println(st);
+			 
+		}
+
+	}
+
+
